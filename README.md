@@ -20,7 +20,7 @@ To untrim (restore) indels consider
 ```
 
 
-The original indels are kept in a lookup table (denoted by command line swicth `-hash`), indexed by chromosome and position for later restoration.
+The original indels are kept in a lookup table (denoted by command line switch `-hash`), indexed by chromosome and position for later restoration.
 
 Rebased insertions follow this mapping,
 ```
