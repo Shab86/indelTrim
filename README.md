@@ -1,4 +1,4 @@
-IndelTrim rewrites indels, where insertions are replaced with a single nucleotides and deletions stripped out, for the purpose of genotype phasing. 
+IndelTrim rewrites indels, where insertions are replaced with a single nucleotide and deletions stripped out, for the purpose of genotype phasing. 
 
 IndelTrim is implemented in Haskell and supports VCF and Plink (bed,bim,fam) formats.
 
