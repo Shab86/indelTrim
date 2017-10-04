@@ -10,7 +10,7 @@ To trim indels run
 ```
 which will produce `file.vcf.trimmed.vcf` with trimmed indels and `file.vcf.hash` with original indels.
 
-To untrim (restore) indels consider
+To untrim (restore) indels run
 ```
   cat file.vcf.trimmed.vcf | ./untrimVCF file.vcf.hash > file.untrimmed.vcf
 ```
