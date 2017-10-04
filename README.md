@@ -1,22 +1,18 @@
-IndelTrim rewrites indels, where insertions are replaced with a single nucleotide and deletions stripped out, for the purpose of genotype phasing. 
+IndelTrim recodes indel alleles for the purpose of genotype phasing. 
 
-IndelTrim is implemented in Haskell and supports VCF and Plink (bed,bim,fam) formats.
+IndelTrim is currently implemented in Scala and supports VCF format.
 
-To install Haskell consider `sudo apt-get install cabal-platform`  .
+Download Scala from http://scala-lang.org/ .
 
-To compile the script consider
+To trim indels run
 ```
-  ghc indelTrim.hs -o indelTrim
+  ./trimVCF.sh file.vcf 
 ```
-
-To trim indels consider
-```
-  ./indelTrim trim -in file.vcf -hash file.hash -out file.trimmed.vcf
-```
+which will produce `file.vcf.trimmed.vcf` with trimmed indels and `file.vcf.hash` with original indels.
 
 To untrim (restore) indels consider
 ```
-  ./indelTrim untrim -in file.trimmed.vcf -hash file.hash -out file.untrimmed.vcf
+  cat file.vcf.trimmed.vcf | ./untrimVCF file.vcf.hash > file.untrimmed.vcf
 ```
 
 
@@ -32,14 +28,8 @@ Rebased insertions follow this mapping,
 
 where the domain correponds to non-indel allele and the image corresponds to the nucleotide that replaces the indel.
 
-For instance, given an insertion in `chr1` at position `123`, such as
+For instance, this insertion in `chr1` at position `123`, such as
 ```
   chr1 123 A ATT
 ```
-
-the indel allele is replaced with `C` following the defined mapping above. This will create an entry in a lookup table such as 
-```
-  chr1 123 A ATT
-```
-
-Deletions are removed from the data file and chromosome, position and original alleles are added to the lookup table.  
+is kept verbatim in the hash file.
