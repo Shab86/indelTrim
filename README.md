@@ -28,7 +28,7 @@ Rebased insertions follow this mapping,
 
 where the domain correponds to non-indel allele and the image corresponds to the nucleotide that replaces the indel.
 
-For instance, this insertion in `chr1` at position `123`, such as
+For instance, this insertion in `chr1` at position `123`
 ```
   chr1 123 A ATT
 ```
